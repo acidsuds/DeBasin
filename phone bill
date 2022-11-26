@@ -1,0 +1,49 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+
+service_obj = Service("C:/Users/xxxxx/Downloads/chromedriver_win32/chromedriver.exe")
+driver = webdriver.Chrome(service=service_obj)
+driver.implicitly_wait(5)
+driver.get("https://prepaid.t-mobile.com/home")
+
+driver.find_element(By.CSS_SELECTOR, "#no-map4").click()
+
+driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-17").send_keys("xxxxxxxxxx")
+driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-18").send_keys("xxxxxxxxxx")
+
+driver.find_element(By.XPATH, "(//div[@class='button-box'])[3]").click()
+time.sleep(4)
+driver.find_element(By.XPATH, "(//div[@class='button-box'])[3]").click()
+
+driver.find_element(By.CSS_SELECTOR, "#amount").send_keys("50.00")
+
+driver.find_element(By.XPATH, "(//div[@class='button-box'])[2]").click()
+time.sleep(4)
+driver.find_element(By.XPATH, "(//div[@class='button-box'])[2]").click()
+
+driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-125").send_keys("xxnamexxx")
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-126").send_keys("xxxxxxxxxxxxxxxx")
+
+driver.find_element(By.XPATH, "(//span[@class='ui-clickable fa fa-caret-down'])[1]").click()
+driver.find_element(By.XPATH, "(//span[normalize-space()='November'])[1]").click()
+
+driver.find_element(By.XPATH, "(//span[@class='ui-clickable fa fa-caret-down'])[2]").click()
+
+driver.find_element(By.XPATH, "(//span[normalize-space()='2025'])[1]").click()
+
+driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-127").send_keys("xxxx")
+
+driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-128").send_keys("xxxxx")
+time.sleep(8)
+driver.find_element(By.CSS_SELECTOR, "#btn-default-145").click()
+
+modal_box = driver.find_element(By.XPATH, "(//div[@class='scroll-box-content'])[1]")
+driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", modal_box)
+
+driver.find_element(By.CSS_SELECTOR, "#btn-default-147").click()
+
+
+driver.close()
