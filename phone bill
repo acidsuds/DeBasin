@@ -28,7 +28,7 @@ time.sleep(2)
 driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-126").send_keys("xxxxxxxxxxxxxxxx")
 
 driver.find_element(By.XPATH, "(//span[@class='ui-clickable fa fa-caret-down'])[1]").click()
-driver.find_element(By.XPATH, "(//span[normalize-space()='November'])[1]").click()
+driver.find_element(By.XPATH, "(//span[normalize-space()='XXXXXXXX'])[1]").click()
 
 driver.find_element(By.XPATH, "(//span[@class='ui-clickable fa fa-caret-down'])[2]").click()
 
@@ -37,7 +37,7 @@ driver.find_element(By.XPATH, "(//span[normalize-space()='2025'])[1]").click()
 driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-127").send_keys("xxxx")
 
 driver.find_element(By.CSS_SELECTOR, "#tmo-input-default-128").send_keys("xxxxx")
-time.sleep(8)
+time.sleep(5)
 driver.find_element(By.CSS_SELECTOR, "#btn-default-145").click()
 
 modal_box = driver.find_element(By.XPATH, "(//div[@class='scroll-box-content'])[1]")
